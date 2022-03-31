@@ -1,0 +1,29 @@
+<nav>
+    <div class="logo" onclick="window.location.href = '/'">
+        <img src="https://www.nicepng.com/png/full/82-828452_complaining-about-others-quot-person-with-megaphone-clipart.png" alt="Logo Image">
+    </div>
+    <div class="hamburger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+    <% if (isAuthenticated) { %>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/protected/addComplaint">Add Complaint</a></li>
+            <li><a href="/protected/posts">My Posts</a></li>
+            <% } %>
+                <% if (!isAuthenticated) { %>
+                    <ul class="nav-links">
+                        <li><a class="" href="/login">Login</a></li>
+                        <li><a class="" href="/register">Register</a></li>
+                    </ul>
+                    <% }else { %>
+                        <ul class="nav-links">
+                            <form action="/logout" method="post">
+                                <button type="submit" class="btn btn-danger">Logout</button>
+                            </form>
+                        </ul>
+                        <% } %>
+        </ul>
+</nav>

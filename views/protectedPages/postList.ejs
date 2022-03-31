@@ -1,0 +1,35 @@
+<%- include('../includes/topHeader.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/header.ejs') %>
+            <main class="grid mediumWidth">
+                <% if (postList.length > 0) { %>
+                    <% for (let post of postList) { %>
+                        <article>
+                            <img src="https://imagevars.gulfnews.com/2021/03/07/STOCK-salary-wallet-money_1780d88f55d_large.jpg" alt="Sample photo">
+                            <div class="text">
+                                <h3 class="text-danger">
+                                    <%= post.companyName %>
+                                </h3>
+                                <p>
+                                    <h6>
+                                        <%= post.companyOwner %>
+                                    </h6> current representitive of
+                                    <%= post.companyName %> received complaints by
+                                        <%= post.userId.name %>.</p>
+                                <a href="/protected/post/<%= post._id %>?edit=true" class="btn btn-primary btn-block">Edit</a>
+
+                                <form class="mt-2" action="/protected/delete-post" method="POST">
+                                    <input type="hidden" value="<%= post._id %>" name="postId">
+                                    <button class="form-control btn btn-danger" type="submit">Delete</button>
+                                </form>
+                            </div>
+                        </article>
+                        <% } %>
+                            <% } else { %>
+                                <h1>No Posts Found!</h1>
+                                <% } %>
+            </main>
+
+            <%- include('../includes/footer.ejs') %>

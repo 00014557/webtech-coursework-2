@@ -1,0 +1,66 @@
+<%- include('../includes/topHeader.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/header.ejs') %>
+            <div class="mediumWidth_top">
+                <h6 class="welcomingUser">
+                    With honestly you can make changes the filled form bellow
+                </h6>
+            </div>
+            <div class="mediumWidth_top shadow mt-5">
+
+                <form action="/protected/post" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="companyName">Company Name</label>
+                            <input required type="text" value="<%= post.companyName %>" name="companyName" class="form-control" id="companyName" placeholder="company name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="companyOwner">Company Owner</label>
+                            <input required type="text" value="<%= post.companyOwner %>" name="companyOwner" class="form-control" id="companyOwner" placeholder="who is company owner?">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="jobDuty">Job Duty</label>
+                            <input required type="text" value="<%= post.jobDuty %>" name="jobDuty" class="form-control" id="jobDuty" placeholder="job duty">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="companyAddress">Location</label>
+                            <input required type="text" value="<%= post.companyAddress %>" name="companyAddress" class="form-control" id="companyAddress" placeholder="address of company">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="workPeriod">Work Period</label>
+                            <select required id="workPeriod" value="<%= post.workPeriod %>" name="workPeriod" class="form-control">
+                                <option selected value="less than 1 year">Choose...</option>
+                                <option value="less than 1">less than 1 year</option>
+                                <option value="1 year">exactly 1 year</option>
+                                <option value="more than 1 year">more than 1 year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="description">About Company </label>
+                            <textarea required placeholder="Tell a little bit about this company" class="form-control" name="description" id="description" rows="5"><%= post.description %></textarea>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="complain_reasons">Reasons of Complaying </label>
+                            <textarea required placeholder="What are the reasons of complaying?" class="form-control" name="complain_reasons" id="complain_reasons" rows="5"><%= post.complain_reasons %></textarea>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="workType">Work Type</label>
+                            <select required id="workType" value="<%= post.workType %>" name="workType" class="form-control">
+                                <option selected value="full time">Choose...</option>
+                                <option value="full time">Full Time</option>
+                                <option value="part time">Part Time</option>
+                            </select>
+                        </div>
+                    </div>
+                    <input type="hidden" value="<%= post._id %>" name="id">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+
+            <%- include('../includes/footer.ejs') %>

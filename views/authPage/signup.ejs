@@ -1,0 +1,54 @@
+<%- include('../includes/topHeader.ejs') %>
+    <link rel="stylesheet" href="/css/form.css">
+    </head>
+
+    <body>
+        <%- include('../includes/header.ejs') %>
+
+            <div class="signup__container">
+                <div class="container__child signup__thumbnail">
+                    <div class="thumbnail__logo">
+                    </div>
+                    <div class="signup__overlay"></div>
+                </div>
+                <div class="container__child signup__form">
+                    <form action="/register" method="post">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input class="form-control" type="text" name="name" id="name" placeholder="James" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="surname">Surname</label>
+                            <input class="form-control" type="text" name="surname" id="surname" placeholder="Bond" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input class="form-control" type="text" name="email" id="email" placeholder="james.bond@spectre.com" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Your age</label>
+                            <input class="form-control" type="text" name="age" id="age" placeholder="20" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input class="form-control" type="password" name="password" id="password" placeholder="********" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordRepeat">Repeat Password</label>
+                            <input class="form-control" type="password" name="passwordRepeat" id="passwordRepeat" placeholder="********" required />
+                        </div>
+                        <div class="m-t-lg">
+                            <ul class="list-inline">
+                                <li>
+                                    <input class="btn btn--form" type="submit" value="Register" />
+                                </li>
+                                <li class="mt-2">
+                                    <a class="signup__link" href="/login">I am already a member</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <%- include('../includes/footer.ejs') %>

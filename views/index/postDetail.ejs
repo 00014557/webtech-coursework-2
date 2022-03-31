@@ -1,0 +1,37 @@
+<%- include('../includes/topHeader.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/header.ejs') %>
+
+            <div class="mediumWidth_top">
+                <h5>
+                    <%= post[0].userId.name %>
+                        <%= post[0].userId.surname %>
+                            <%= post[0].userId.age%> year old developer
+                </h5>
+                <p>Company called <span class="bg-warning"><%= post[0].companyName %> managed by (<%= post[0].companyOwner %>)</span> provided job offer for candidate
+                    <%= post[0].userId.name %>
+                        <%= post[0].userId.surname %>.</p>
+                <p>
+                    <%= post[0].userId.name %>
+                        <%= post[0].userId.surname %> worked
+                            <span class="bg-warning"><%= post[0].workType %></span> per day for
+                            <%= post[0].workPeriod %> year
+                </p>
+                <p>JobDuty:
+                    <span class="bg-warning">  <%= post[0].jobDuty %> </span>
+                </p>
+                <p>
+                    <span class="bg-warning">  Complain reasons: </span>
+                    <%= post[0].complain_reasons %>
+                </p>
+                <p>
+                    <span class="bg-warning">
+                    About
+                    <%= post[0].companyName %>:</span>
+                    <%= post[0].description %>
+                </p>
+            </div>
+
+            <%- include('../includes/footer.ejs') %>
