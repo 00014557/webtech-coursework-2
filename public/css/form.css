@@ -150,10 +150,15 @@ label {
 
 @media (max-width: 850px) {
     .signup__container {
-        flex-wrap: wrap;
-        width: 100%;
+        flex-wrap: wrap !important;
+        width: 97% !important;
+        flex-direction: column !important;
+        height: 100%;
     }
     .container__child {
-        width: 100%;
+        width: 100% !important;
+    }
+    .signup__overlay {
+        width: 0 !important;
     }
 }
